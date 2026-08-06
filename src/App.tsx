@@ -357,15 +357,14 @@ function Navbar() {
             </a>
           ))}
         </div>
-      <button
-  className="inline-flex items-center justify-center w-fit px-3 py-2 sm:px-5 sm:py-2 text-white text-xs sm:text-sm shadow-md rounded-full"
-  style={{
-    background: "linear-gradient(135deg, #FF6B6B, #FF9F43)",
-    fontFamily: "'Baloo 2', cursive",
-  }}
->
-  ✨ Admission Enquiry
-</button>
+      <a href="#admission"
+        className="inline-flex items-center justify-center w-fit px-3 py-2 sm:px-5 sm:py-2 text-white text-xs sm:text-sm shadow-md rounded-full"
+        style={{
+          background: "linear-gradient(135deg, #FF6B6B, #FF9F43)",
+          fontFamily: "'Baloo 2', cursive",
+        }}>
+        ✨ Admission Enquiry
+      </a>
       </div>
     </nav>
   )
@@ -378,57 +377,38 @@ function Hero() {
     <section id="about" className="relative min-h-screen flex items-center overflow-hidden"
       style={{ background: 'linear-gradient(180deg, #EAF6FD 0%, #FFD6E0 50%, #E0D4F5 100%)' }}>
 
-      {/* Drifting clouds */}
+      {/* Background decorations */}
       <Cloud className="absolute w-40 sm:w-44 md:w-48 opacity-90 animate-drift" style={{ top: '8%', animationDuration: '28s' }} />
       <Cloud className="absolute w-32 sm:w-36 md:w-36 opacity-75 animate-drift2" style={{ top: '18%', animationDuration: '42s', animationDelay: '8s' }} />
       <Cloud className="absolute w-44 sm:w-48 md:w-56 opacity-80 animate-drift" style={{ top: '4%', animationDuration: '34s', animationDelay: '14s' }} />
-
-      {/* Sun */}
-      <SmilingSun className="absolute w-16 sm:w-20 md:w-24 md:h-24 animate-pulse-soft" style={{ top: '10%', right: '8%' }} />
-
-      {/* Birds */}
+      <SmilingSun className="absolute w-16 sm:w-20 md:w-24 animate-pulse-soft" style={{ top: '10%', right: '8%' }} />
       <Bird className="absolute w-8 sm:w-9 md:w-10 animate-drift" style={{ top: '22%', animationDuration: '22s', animationDelay: '4s' }} />
       <Bird className="absolute w-6 sm:w-7 md:w-8 animate-drift2" style={{ top: '28%', animationDuration: '30s', animationDelay: '12s' }} />
-
-      {/* Stars */}
       <Star className="absolute w-6 sm:w-7 md:w-8 animate-twinkle" style={{ top: '35%', left: '5%' }} color="#FFE066" />
       <Star className="absolute w-5 sm:w-5 md:w-6 animate-twinkle delay-500" style={{ top: '15%', left: '30%' }} color="#FFB3C6" />
-      <Star className="absolute w-4 sm:w-5 md:w-5 animate-twinkle delay-1000" style={{ top: '50%', right: '20%' }} color="#C9B8E8" />
-
-      {/* Balloons */}
+      <Rainbow className="absolute w-full opacity-20 sm:opacity-25 md:opacity-30" style={{ top: '20%', left: 0 }} />
       <Balloon color="#FF6B6B" className="absolute w-12 sm:w-14 md:w-16 animate-float" style={{ top: '20%', left: '8%' }} />
       <Balloon color="#FFE066" className="absolute w-10 sm:w-11 md:w-12 animate-float delay-700" style={{ top: '30%', left: '15%' }} />
       <Balloon color="#87CEEB" className="absolute w-11 sm:w-13 md:w-14 animate-float delay-300" style={{ top: '15%', right: '25%' }} />
       <Balloon color="#A8E6CF" className="absolute w-8 sm:w-9 md:w-10 animate-float delay-1000" style={{ top: '25%', right: '15%' }} />
       <Balloon color="#C9B8E8" className="absolute w-10 sm:w-11 md:w-12 animate-float delay-500" style={{ top: '60%', left: '5%' }} />
-
-      {/* Paper airplane */}
       <PaperAirplane className="absolute w-16 sm:w-18 md:w-20 animate-drift2" style={{ top: '45%', animationDuration: '18s', animationDelay: '6s' }} />
-
-      {/* Lollipops */}
       <Lollipop color="#FF6B6B" className="absolute w-8 sm:w-10 md:w-12 animate-float" style={{ top: '35%', left: '20%' }} />
       <Lollipop color="#FFE066" className="absolute w-7 sm:w-9 md:w-10 animate-float delay-500" style={{ top: '55%', right: '25%' }} />
       <Lollipop color="#87CEEB" className="absolute w-8 sm:w-10 md:w-11 animate-float delay-1000" style={{ top: '42%', right: '8%' }} />
-
-      {/* Ice cream cones */}
       <IceCream color1="#FFB347" color2="#FF9F43" className="absolute w-10 sm:w-12 md:w-14 animate-float delay-700" style={{ top: '28%', left: '3%' }} />
       <IceCream color1="#D4A574" color2="#FFB3C6" className="absolute w-9 sm:w-11 md:w-12 animate-float delay-300" style={{ top: '48%', left: '75%' }} />
-
-      {/* Flowers */}
       <Flower petalColor="#FFB3C6" stemColor="#A8E6CF" className="absolute w-7 sm:w-8 md:w-10 animate-sway" style={{ top: '62%', left: '20%' }} />
       <Flower petalColor="#FFE0B3" stemColor="#A8E6CF" className="absolute w-6 sm:w-7 md:w-8 animate-sway delay-500" style={{ top: '38%', right: '45%' }} />
       <Flower petalColor="#C9B8E8" stemColor="#87CEEB" className="absolute w-7 sm:w-8 md:w-9 animate-sway delay-1000" style={{ top: '18%', right: '5%' }} />
-
-      {/* Rainbow behind text */}
-      <Rainbow className="absolute w-full opacity-20 sm:opacity-25 md:opacity-30" style={{ top: '20%', left: 0 }} />
+      <TeddyBear className="hidden lg:block absolute w-32 h-32 bottom-4 left-4 animate-float delay-300" />
 
       {/* Main content */}
-      <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:pt-28 sm:pb-32 grid gap-8 lg:grid-cols-2 lg:gap-12 items-center">
+      <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:pt-28 sm:pb-32 grid gap-8 items-center">
         <div className="text-center lg:text-left">
-          <div className="flex justify-center lg:justify-start mb-3 sm:mb-6">
-            <img src="./logo.png" alt="Kindergarten Logo" className="h-24 sm:h-28 md:h-32 w-auto object-contain animate-pop-in" />
-          </div>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-3 sm:mb-4"
+          <div className="flex justify-center mb-3 sm:mb-6">
+            <img src="./logo.png" alt="Kindergarten Logo" className="h-24 sm:h-28 md:h-32 w-auto max-w-[200px] object-contain animate-pop-in mx-auto" />
+          </div>          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-3 sm:mb-4"
             style={{ fontFamily: "'Baloo 2', cursive", color: '#333' }}>
             Where Every{' '}
             <span style={{ background: 'linear-gradient(135deg, #FF6B6B, #FF9F43, #FFE066)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
@@ -460,51 +440,6 @@ function Hero() {
           </div>
         </div>
 
-        {/* Hero illustration - hidden on small devices */}
-        <div className="hidden lg:flex relative justify-center items-end h-auto">
-          <TeddyBear className="w-32 h-32 absolute bottom-0 left-4 animate-float delay-300" />
-          <Rabbit className="w-24 h-28 absolute bottom-0 right-4 animate-float delay-700" />
-          {/* Playground scene */}
-          <div className="relative w-full max-w-[18rem] sm:max-w-[22rem] h-64 sm:h-72 rounded-full shadow-2xl flex items-center justify-center"
-            style={{ background: 'linear-gradient(135deg, #C8F2E0 0%, #C8E9F8 50%, #E0D4F5 100%)' }}>
-            <Rainbow className="absolute w-full opacity-60" style={{ top: '10%' }} />
-            {/* Children stick figures */}
-            <svg viewBox="0 0 200 180" className="w-full h-full" fill="none">
-              {/* Child 1 - reading */}
-              <circle cx="60" cy="60" r="16" fill="#FFB3C6" stroke="#FF8FAB" strokeWidth="2" />
-              <circle cx="60" cy="60" r="10" fill="#FFDDE9" />
-              <circle cx="56" cy="57" r="3" fill="#333" /><circle cx="64" cy="57" r="3" fill="#333" />
-              <path d="M55 65 Q60 69 65 65" stroke="#FF6B6B" strokeWidth="1.5" strokeLinecap="round" fill="none" />
-              <rect x="40" y="75" width="40" height="50" rx="8" fill="#87CEEB" />
-              <rect x="42" y="90" width="36" height="32" rx="6" fill="#FFE066" />
-              <text x="60" y="110" textAnchor="middle" fontSize="14" fill="#FF6B6B" fontFamily="Baloo 2">📖</text>
-              {/* Child 2 - painting */}
-              <circle cx="140" cy="55" r="16" fill="#C9B8E8" stroke="#9B7ED4" strokeWidth="2" />
-              <circle cx="140" cy="55" r="10" fill="#E8DEFF" />
-              <circle cx="136" cy="52" r="3" fill="#333" /><circle cx="144" cy="52" r="3" fill="#333" />
-              <path d="M135 60 Q140 64 145 60" stroke="#9B7ED4" strokeWidth="1.5" strokeLinecap="round" fill="none" />
-              <rect x="120" y="70" width="40" height="50" rx="8" fill="#A8E6CF" />
-              <text x="140" y="105" textAnchor="middle" fontSize="18" fill="#FF6B6B" fontFamily="Baloo 2">🎨</text>
-              {/* Slide */}
-              <path d="M90 40 L90 140 L170 140" stroke="#FFB347" strokeWidth="8" strokeLinecap="round" fill="none" />
-              <rect x="82" y="25" width="16" height="20" rx="4" fill="#FFB347" />
-              {/* Child 3 on slide */}
-              <circle cx="90" cy="90" r="12" fill="#FFE066" stroke="#FFB347" strokeWidth="1.5" />
-              <circle cx="87" cy="87" r="2.5" fill="#333" /><circle cx="93" cy="87" r="2.5" fill="#333" />
-              <path d="M86 93 Q90 97 94 93" stroke="#FF6B6B" strokeWidth="1.5" strokeLinecap="round" fill="none" />
-              {/* Grass */}
-              <path d="M0 160 Q50 140 100 155 Q150 170 200 155 L200 180 L0 180 Z" fill="#A8E6CF" />
-              <path d="M10 160 Q12 148 14 160" stroke="#7DC49A" strokeWidth="2" strokeLinecap="round" />
-              <path d="M30 155 Q32 143 34 155" stroke="#7DC49A" strokeWidth="2" strokeLinecap="round" />
-              <path d="M160 158 Q162 146 164 158" stroke="#7DC49A" strokeWidth="2" strokeLinecap="round" />
-              <path d="M180 153 Q182 141 184 153" stroke="#7DC49A" strokeWidth="2" strokeLinecap="round" />
-            </svg>
-          </div>
-          {/* Crayons decoration */}
-          <Crayon color="#FF6B6B" angle={-20} className="absolute w-8 top-4 right-2" />
-          <Crayon color="#FFE066" angle={15} className="absolute w-7 top-8 left-2" />
-          <Crayon color="#87CEEB" angle={-10} className="absolute w-6 bottom-8 right-0" />
-        </div>
       </div>
 
       {/* Wave divider */}
@@ -775,6 +710,7 @@ function Contact() {
   return (
     <section id="contact" className="relative py-20 overflow-hidden"
       style={{ background: 'linear-gradient(135deg, #EAF6FD, #FFD6E0)' }}>
+      <span id="admission" className="absolute top-0 left-0" aria-hidden="true" />
       <Balloon color="#FFE066" className="absolute w-14 animate-float" style={{ top: '10%', left: '5%' }} />
       <Balloon color="#C9B8E8" className="absolute w-10 animate-float delay-500" style={{ top: '20%', right: '8%' }} />
       <Rainbow className="absolute w-full opacity-20" style={{ top: 0 }} />
