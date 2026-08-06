@@ -359,7 +359,7 @@ function Navbar() {
         </div>
         <button className="btn-pill px-3 py-2 sm:px-5 sm:py-2 text-white text-xs sm:text-sm shadow-md"
           style={{ background: 'linear-gradient(135deg, #FF6B6B, #FF9F43)', fontFamily: "'Baloo 2', cursive" }}>
-          ✨ Enroll
+          ✨ Admission Enquiry
         </button>
       </div>
     </nav>
@@ -373,63 +373,63 @@ function Hero() {
     <section id="about" className="relative min-h-screen flex items-center overflow-hidden"
       style={{ background: 'linear-gradient(180deg, #EAF6FD 0%, #FFD6E0 50%, #E0D4F5 100%)' }}>
 
-      {/* Drifting clouds - hidden on mobile */}
-      <Cloud className="hidden md:block absolute w-48 opacity-90 animate-drift" style={{ top: '8%', animationDuration: '28s' }} />
-      <Cloud className="hidden md:block absolute w-36 opacity-75 animate-drift2" style={{ top: '18%', animationDuration: '42s', animationDelay: '8s' }} />
-      <Cloud className="hidden md:block absolute w-56 opacity-80 animate-drift" style={{ top: '4%', animationDuration: '34s', animationDelay: '14s' }} />
+      {/* Drifting clouds */}
+      <Cloud className="absolute w-40 sm:w-44 md:w-48 opacity-90 animate-drift" style={{ top: '8%', animationDuration: '28s' }} />
+      <Cloud className="absolute w-32 sm:w-36 md:w-36 opacity-75 animate-drift2" style={{ top: '18%', animationDuration: '42s', animationDelay: '8s' }} />
+      <Cloud className="absolute w-44 sm:w-48 md:w-56 opacity-80 animate-drift" style={{ top: '4%', animationDuration: '34s', animationDelay: '14s' }} />
 
-      {/* Sun - hidden on mobile */}
-      <SmilingSun className="hidden md:block absolute w-24 h-24 animate-pulse-soft" style={{ top: '10%', right: '8%' }} />
+      {/* Sun */}
+      <SmilingSun className="absolute w-16 sm:w-20 md:w-24 md:h-24 animate-pulse-soft" style={{ top: '10%', right: '8%' }} />
 
-      {/* Birds - hidden on mobile */}
-      <Bird className="hidden md:block absolute w-10 animate-drift" style={{ top: '22%', animationDuration: '22s', animationDelay: '4s' }} />
-      <Bird className="hidden md:block absolute w-8 animate-drift2" style={{ top: '28%', animationDuration: '30s', animationDelay: '12s' }} />
+      {/* Birds */}
+      <Bird className="absolute w-8 sm:w-9 md:w-10 animate-drift" style={{ top: '22%', animationDuration: '22s', animationDelay: '4s' }} />
+      <Bird className="absolute w-6 sm:w-7 md:w-8 animate-drift2" style={{ top: '28%', animationDuration: '30s', animationDelay: '12s' }} />
 
-      {/* Stars - hidden on mobile */}
-      <Star className="hidden md:block absolute w-8 animate-twinkle" style={{ top: '35%', left: '5%' }} color="#FFE066" />
-      <Star className="hidden md:block absolute w-6 animate-twinkle delay-500" style={{ top: '15%', left: '30%' }} color="#FFB3C6" />
-      <Star className="hidden md:block absolute w-5 animate-twinkle delay-1000" style={{ top: '50%', right: '20%' }} color="#C9B8E8" />
+      {/* Stars */}
+      <Star className="absolute w-6 sm:w-7 md:w-8 animate-twinkle" style={{ top: '35%', left: '5%' }} color="#FFE066" />
+      <Star className="absolute w-5 sm:w-5 md:w-6 animate-twinkle delay-500" style={{ top: '15%', left: '30%' }} color="#FFB3C6" />
+      <Star className="absolute w-4 sm:w-5 md:w-5 animate-twinkle delay-1000" style={{ top: '50%', right: '20%' }} color="#C9B8E8" />
 
-      {/* Balloons - hidden on mobile */}
-      <Balloon color="#FF6B6B" className="hidden md:block absolute w-16 animate-float" style={{ top: '20%', left: '8%' }} />
-      <Balloon color="#FFE066" className="hidden md:block absolute w-12 animate-float delay-700" style={{ top: '30%', left: '15%' }} />
-      <Balloon color="#87CEEB" className="hidden md:block absolute w-14 animate-float delay-300" style={{ top: '15%', right: '25%' }} />
-      <Balloon color="#A8E6CF" className="hidden md:block absolute w-10 animate-float delay-1000" style={{ top: '25%', right: '15%' }} />
-      <Balloon color="#C9B8E8" className="hidden md:block absolute w-12 animate-float delay-500" style={{ top: '60%', left: '5%' }} />
+      {/* Balloons */}
+      <Balloon color="#FF6B6B" className="absolute w-12 sm:w-14 md:w-16 animate-float" style={{ top: '20%', left: '8%' }} />
+      <Balloon color="#FFE066" className="absolute w-10 sm:w-11 md:w-12 animate-float delay-700" style={{ top: '30%', left: '15%' }} />
+      <Balloon color="#87CEEB" className="absolute w-11 sm:w-13 md:w-14 animate-float delay-300" style={{ top: '15%', right: '25%' }} />
+      <Balloon color="#A8E6CF" className="absolute w-8 sm:w-9 md:w-10 animate-float delay-1000" style={{ top: '25%', right: '15%' }} />
+      <Balloon color="#C9B8E8" className="absolute w-10 sm:w-11 md:w-12 animate-float delay-500" style={{ top: '60%', left: '5%' }} />
 
-      {/* Butterflies - hidden on mobile */}
-      <Butterfly className="hidden md:block absolute w-16 animate-sway" style={{ top: '40%', left: '12%' }} />
-      <Butterfly className="hidden md:block absolute w-12 animate-sway delay-1000" style={{ top: '55%', right: '10%' }} />
-      <Butterfly className="hidden md:block absolute w-10 animate-sway delay-500" style={{ top: '30%', right: '30%' }} />
+      {/* Butterflies */}
+      <Butterfly className="absolute w-14 sm:w-15 md:w-16 animate-sway" style={{ top: '40%', left: '12%' }} />
+      <Butterfly className="absolute w-10 sm:w-11 md:w-12 animate-sway delay-1000" style={{ top: '55%', right: '10%' }} />
+      <Butterfly className="absolute w-8 sm:w-9 md:w-10 animate-sway delay-500" style={{ top: '30%', right: '30%' }} />
 
-      {/* Kite - hidden on mobile */}
-      <Kite className="hidden md:block absolute w-16 animate-float-slow" style={{ top: '20%', right: '40%' }} />
+      {/* Kite */}
+      <Kite className="absolute w-14 sm:w-15 md:w-16 animate-float-slow" style={{ top: '20%', right: '40%' }} />
 
-      {/* Paper airplane - hidden on mobile */}
-      <PaperAirplane className="hidden md:block absolute w-20 animate-drift2" style={{ top: '45%', animationDuration: '18s', animationDelay: '6s' }} />
+      {/* Paper airplane */}
+      <PaperAirplane className="absolute w-16 sm:w-18 md:w-20 animate-drift2" style={{ top: '45%', animationDuration: '18s', animationDelay: '6s' }} />
 
-      {/* Lollipops - hidden on mobile */}
-      <Lollipop color="#FF6B6B" className="hidden md:block absolute w-12 animate-float" style={{ top: '35%', left: '20%' }} />
-      <Lollipop color="#FFE066" className="hidden md:block absolute w-10 animate-float delay-500" style={{ top: '55%', right: '25%' }} />
-      <Lollipop color="#87CEEB" className="hidden md:block absolute w-11 animate-float delay-1000" style={{ top: '42%', right: '8%' }} />
+      {/* Lollipops */}
+      <Lollipop color="#FF6B6B" className="absolute w-8 sm:w-10 md:w-12 animate-float" style={{ top: '35%', left: '20%' }} />
+      <Lollipop color="#FFE066" className="absolute w-7 sm:w-9 md:w-10 animate-float delay-500" style={{ top: '55%', right: '25%' }} />
+      <Lollipop color="#87CEEB" className="absolute w-8 sm:w-10 md:w-11 animate-float delay-1000" style={{ top: '42%', right: '8%' }} />
 
-      {/* Ice cream cones - hidden on mobile */}
-      <IceCream color1="#FFB347" color2="#FF9F43" className="hidden md:block absolute w-14 animate-float delay-700" style={{ top: '28%', left: '3%' }} />
-      <IceCream color1="#D4A574" color2="#FFB3C6" className="hidden md:block absolute w-12 animate-float delay-300" style={{ top: '48%', left: '78%' }} />
+      {/* Ice cream cones */}
+      <IceCream color1="#FFB347" color2="#FF9F43" className="absolute w-10 sm:w-12 md:w-14 animate-float delay-700" style={{ top: '28%', left: '3%' }} />
+      <IceCream color1="#D4A574" color2="#FFB3C6" className="absolute w-9 sm:w-11 md:w-12 animate-float delay-300" style={{ top: '48%', left: '75%' }} />
 
-      {/* Flowers - hidden on mobile */}
-      <Flower petalColor="#FFB3C6" stemColor="#A8E6CF" className="hidden md:block absolute w-10 animate-sway" style={{ top: '62%', left: '20%' }} />
-      <Flower petalColor="#FFE0B3" stemColor="#A8E6CF" className="hidden md:block absolute w-8 animate-sway delay-500" style={{ top: '38%', right: '45%' }} />
-      <Flower petalColor="#C9B8E8" stemColor="#87CEEB" className="hidden md:block absolute w-9 animate-sway delay-1000" style={{ top: '18%', right: '5%' }} />
+      {/* Flowers */}
+      <Flower petalColor="#FFB3C6" stemColor="#A8E6CF" className="absolute w-7 sm:w-8 md:w-10 animate-sway" style={{ top: '62%', left: '20%' }} />
+      <Flower petalColor="#FFE0B3" stemColor="#A8E6CF" className="absolute w-6 sm:w-7 md:w-8 animate-sway delay-500" style={{ top: '38%', right: '45%' }} />
+      <Flower petalColor="#C9B8E8" stemColor="#87CEEB" className="absolute w-7 sm:w-8 md:w-9 animate-sway delay-1000" style={{ top: '18%', right: '5%' }} />
 
-      {/* Bubbles - hidden on mobile */}
-      <Bubble size="lg" className="hidden md:block absolute animate-float" style={{ top: '12%', left: '25%' }} />
-      <Bubble size="md" className="hidden md:block absolute animate-float delay-700" style={{ top: '52%', left: '45%' }} />
-      <Bubble size="sm" className="hidden md:block absolute animate-float delay-300" style={{ top: '65%', right: '18%' }} />
-      <Bubble size="md" className="hidden md:block absolute animate-float delay-1000" style={{ top: '22%', right: '12%' }} />
+      {/* Bubbles */}
+      <Bubble size="lg" className="absolute animate-float" style={{ top: '12%', left: '25%' }} />
+      <Bubble size="md" className="absolute animate-float delay-700" style={{ top: '52%', left: '45%' }} />
+      <Bubble size="sm" className="absolute animate-float delay-300" style={{ top: '65%', right: '18%' }} />
+      <Bubble size="md" className="absolute animate-float delay-1000" style={{ top: '22%', right: '12%' }} />
 
-      {/* Rainbow behind text - hidden on mobile */}
-      <Rainbow className="hidden md:block absolute w-full opacity-30" style={{ top: '20%', left: 0 }} />
+      {/* Rainbow behind text */}
+      <Rainbow className="absolute w-full opacity-20 sm:opacity-25 md:opacity-30" style={{ top: '20%', left: 0 }} />
 
       {/* Main content */}
       <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:pt-28 sm:pb-32 grid gap-8 lg:grid-cols-2 lg:gap-12 items-center">
