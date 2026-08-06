@@ -363,10 +363,8 @@ function Hero() {
       {/* Main content */}
       <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:pt-28 sm:pb-32 grid gap-8 lg:grid-cols-2 lg:gap-12 items-center">
         <div className="text-center lg:text-left">
-          <div className="flex justify-center lg:justify-start gap-2 mb-3 sm:mb-4">
-            <BuildingBlock letter="A" color="#FF6B6B" className="w-9 h-9 sm:w-10 sm:h-10 animate-pop-in" />
-            <BuildingBlock letter="B" color="#FFB347" className="w-9 h-9 sm:w-10 sm:h-10 animate-pop-in delay-100" />
-            <BuildingBlock letter="C" color="#FFE066" className="w-9 h-9 sm:w-10 sm:h-10 animate-pop-in delay-200" />
+          <div className="flex justify-center lg:justify-start mb-3 sm:mb-6">
+            <img src="/logo.png" alt="Kindergarten Logo" className="h-24 sm:h-28 md:h-32 w-auto object-contain animate-pop-in" />
           </div>
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-3 sm:mb-4"
             style={{ fontFamily: "'Baloo 2', cursive", color: '#333' }}>
