@@ -60,26 +60,6 @@ function Balloon({ color, className = '', style = {} }: { color: string; classNa
   )
 }
 
-function Butterfly({ className = '', style = {} }: { className?: string; style?: React.CSSProperties }) {
-  return (
-    <svg viewBox="0 0 80 50" className={className} style={style} fill="none">
-      <g className="animate-flutter">
-        <ellipse cx="25" cy="18" rx="22" ry="16" fill="#FFB3C6" fillOpacity="0.8" stroke="#FF8FAB" strokeWidth="1" />
-        <ellipse cx="25" cy="35" rx="16" ry="12" fill="#FFD6E0" fillOpacity="0.8" stroke="#FF8FAB" strokeWidth="1" />
-      </g>
-      <g className="animate-flutter" style={{ animationDelay: '0.1s' }}>
-        <ellipse cx="55" cy="18" rx="22" ry="16" fill="#C9B8E8" fillOpacity="0.8" stroke="#9B7ED4" strokeWidth="1" />
-        <ellipse cx="55" cy="35" rx="16" ry="12" fill="#E0D4F5" fillOpacity="0.8" stroke="#9B7ED4" strokeWidth="1" />
-      </g>
-      <ellipse cx="40" cy="25" rx="3" ry="12" fill="#333" />
-      <path d="M38 13 Q36 6 34 4" stroke="#333" strokeWidth="1.5" strokeLinecap="round" />
-      <path d="M42 13 Q44 6 46 4" stroke="#333" strokeWidth="1.5" strokeLinecap="round" />
-      <circle cx="34" cy="4" r="2" fill="#333" />
-      <circle cx="46" cy="4" r="2" fill="#333" />
-    </svg>
-  )
-}
-
 function Star({ className = '', style = {}, color = '#FFE066' }: { className?: string; style?: React.CSSProperties; color?: string }) {
   return (
     <svg viewBox="0 0 40 40" className={className} style={style} fill="none">
@@ -469,7 +449,6 @@ function Programs() {
       {/* Decorative elements */}
       <Star className="absolute w-10 animate-twinkle" style={{ top: '10%', left: '3%' }} color="#FFE066" />
       <Star className="absolute w-7 animate-twinkle delay-500" style={{ top: '60%', right: '4%' }} color="#FFB3C6" />
-      <Butterfly className="absolute w-14 animate-sway" style={{ top: '15%', right: '8%' }} />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-10 sm:mb-14">
@@ -625,7 +604,6 @@ function Gallery() {
 
   return (
     <section id="gallery" className="relative py-20 overflow-hidden" style={{ background: '#FFF0F4' }}>
-      <Butterfly className="absolute w-14 animate-sway" style={{ top: '10%', left: '4%' }} />
       <Balloon color="#FFE066" className="absolute w-12 animate-float delay-500" style={{ top: '20%', right: '5%' }} />
       <Star className="absolute w-7 animate-twinkle delay-300" style={{ bottom: '20%', left: '6%' }} color="#C9B8E8" />
 
