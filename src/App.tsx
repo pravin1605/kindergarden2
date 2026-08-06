@@ -594,7 +594,7 @@ function Activities() {
 
 function Gallery() {
   const photos = [
-    { id: '1557939438-1e8d3a82d61f', caption: 'Painting adventures!', rotate: '-3deg' },
+    { id: '1540479859555-17af45c78602', caption: 'Painting adventures!', rotate: '-3deg' },
     { id: '1503454537195-1dcabb73ffb9', caption: 'Story time magic', rotate: '2deg' },
     { id: '1529390079861-591de354faf5', caption: 'Garden explorers', rotate: '-2deg' },
     { id: '1427504494785-3a9ca7044f45', caption: 'Music & movement', rotate: '3deg' },
