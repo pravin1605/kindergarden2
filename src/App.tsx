@@ -357,10 +357,15 @@ function Navbar() {
             </a>
           ))}
         </div>
-        <button className="btn-pill px-3 py-2 sm:px-5 sm:py-2 text-white text-xs sm:text-sm shadow-md"
-          style={{ background: 'linear-gradient(135deg, #FF6B6B, #FF9F43)', fontFamily: "'Baloo 2', cursive" }}>
-          ✨ Admission Enquiry
-        </button>
+      <button
+  className="inline-flex items-center justify-center w-fit px-3 py-2 sm:px-5 sm:py-2 text-white text-xs sm:text-sm shadow-md rounded-full"
+  style={{
+    background: "linear-gradient(135deg, #FF6B6B, #FF9F43)",
+    fontFamily: "'Baloo 2', cursive",
+  }}
+>
+  ✨ Admission Enquiry
+</button>
       </div>
     </nav>
   )
