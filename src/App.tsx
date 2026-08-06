@@ -60,26 +60,6 @@ function Balloon({ color, className = '', style = {} }: { color: string; classNa
   )
 }
 
-function Butterfly({ className = '', style = {} }: { className?: string; style?: React.CSSProperties }) {
-  return (
-    <svg viewBox="0 0 80 50" className={className} style={style} fill="none">
-      <g className="animate-flutter">
-        <ellipse cx="25" cy="18" rx="22" ry="16" fill="#FFB3C6" fillOpacity="0.8" stroke="#FF8FAB" strokeWidth="1" />
-        <ellipse cx="25" cy="35" rx="16" ry="12" fill="#FFD6E0" fillOpacity="0.8" stroke="#FF8FAB" strokeWidth="1" />
-      </g>
-      <g className="animate-flutter" style={{ animationDelay: '0.1s' }}>
-        <ellipse cx="55" cy="18" rx="22" ry="16" fill="#C9B8E8" fillOpacity="0.8" stroke="#9B7ED4" strokeWidth="1" />
-        <ellipse cx="55" cy="35" rx="16" ry="12" fill="#E0D4F5" fillOpacity="0.8" stroke="#9B7ED4" strokeWidth="1" />
-      </g>
-      <ellipse cx="40" cy="25" rx="3" ry="12" fill="#333" />
-      <path d="M38 13 Q36 6 34 4" stroke="#333" strokeWidth="1.5" strokeLinecap="round" />
-      <path d="M42 13 Q44 6 46 4" stroke="#333" strokeWidth="1.5" strokeLinecap="round" />
-      <circle cx="34" cy="4" r="2" fill="#333" />
-      <circle cx="46" cy="4" r="2" fill="#333" />
-    </svg>
-  )
-}
-
 function Star({ className = '', style = {}, color = '#FFE066' }: { className?: string; style?: React.CSSProperties; color?: string }) {
   return (
     <svg viewBox="0 0 40 40" className={className} style={style} fill="none">
@@ -251,18 +231,6 @@ function Flower({ petalColor = '#FFB3C6', stemColor = '#A8E6CF', className = '',
   )
 }
 
-function Bubble({ size = 'md', className = '', style = {} }: { size?: 'sm' | 'md' | 'lg'; className?: string; style?: React.CSSProperties }) {
-  const sizeMap = { sm: 6, md: 12, lg: 18 }
-  const r = sizeMap[size]
-  return (
-    <svg viewBox={`0 0 ${r * 2} ${r * 2}`} className={className} style={style} fill="none">
-      <circle cx={r} cy={r} r={r} stroke="#87CEEB" strokeWidth="0.5" fill="none" fillOpacity="0.1" />
-      <circle cx={r - 2} cy={r - 2} r={2} fill="white" opacity="0.4" />
-      <circle cx={r - 4} cy={r - 4} r="1" fill="white" opacity="0.3" />
-    </svg>
-  )
-}
-
 // ─── Loading Screen ──────────────────────────────────────────────────────────
 
 function LoadingScreen({ onDone }: { onDone: () => void }) {
@@ -397,11 +365,6 @@ function Hero() {
       <Balloon color="#A8E6CF" className="absolute w-8 sm:w-9 md:w-10 animate-float delay-1000" style={{ top: '25%', right: '15%' }} />
       <Balloon color="#C9B8E8" className="absolute w-10 sm:w-11 md:w-12 animate-float delay-500" style={{ top: '60%', left: '5%' }} />
 
-      {/* Butterflies */}
-      <Butterfly className="absolute w-14 sm:w-15 md:w-16 animate-sway" style={{ top: '40%', left: '12%' }} />
-      <Butterfly className="absolute w-10 sm:w-11 md:w-12 animate-sway delay-1000" style={{ top: '55%', right: '10%' }} />
-      <Butterfly className="absolute w-8 sm:w-9 md:w-10 animate-sway delay-500" style={{ top: '30%', right: '30%' }} />
-
       {/* Kite */}
       <Kite className="absolute w-14 sm:w-15 md:w-16 animate-float-slow" style={{ top: '20%', right: '40%' }} />
 
@@ -421,12 +384,6 @@ function Hero() {
       <Flower petalColor="#FFB3C6" stemColor="#A8E6CF" className="absolute w-7 sm:w-8 md:w-10 animate-sway" style={{ top: '62%', left: '20%' }} />
       <Flower petalColor="#FFE0B3" stemColor="#A8E6CF" className="absolute w-6 sm:w-7 md:w-8 animate-sway delay-500" style={{ top: '38%', right: '45%' }} />
       <Flower petalColor="#C9B8E8" stemColor="#87CEEB" className="absolute w-7 sm:w-8 md:w-9 animate-sway delay-1000" style={{ top: '18%', right: '5%' }} />
-
-      {/* Bubbles */}
-      <Bubble size="lg" className="absolute animate-float" style={{ top: '12%', left: '25%' }} />
-      <Bubble size="md" className="absolute animate-float delay-700" style={{ top: '52%', left: '45%' }} />
-      <Bubble size="sm" className="absolute animate-float delay-300" style={{ top: '65%', right: '18%' }} />
-      <Bubble size="md" className="absolute animate-float delay-1000" style={{ top: '22%', right: '12%' }} />
 
       {/* Rainbow behind text */}
       <Rainbow className="absolute w-full opacity-20 sm:opacity-25 md:opacity-30" style={{ top: '20%', left: 0 }} />
@@ -543,7 +500,6 @@ function Programs() {
       {/* Decorative elements */}
       <Star className="absolute w-10 animate-twinkle" style={{ top: '10%', left: '3%' }} color="#FFE066" />
       <Star className="absolute w-7 animate-twinkle delay-500" style={{ top: '60%', right: '4%' }} color="#FFB3C6" />
-      <Butterfly className="absolute w-14 animate-sway" style={{ top: '15%', right: '8%' }} />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-10 sm:mb-14">
@@ -699,7 +655,6 @@ function Gallery() {
 
   return (
     <section id="gallery" className="relative py-20 overflow-hidden" style={{ background: '#FFF0F4' }}>
-      <Butterfly className="absolute w-14 animate-sway" style={{ top: '10%', left: '4%' }} />
       <Balloon color="#FFE066" className="absolute w-12 animate-float delay-500" style={{ top: '20%', right: '5%' }} />
       <Star className="absolute w-7 animate-twinkle delay-300" style={{ bottom: '20%', left: '6%' }} color="#C9B8E8" />
 
@@ -879,12 +834,6 @@ function Footer() {
               x2={80 + 34 * Math.cos(deg * Math.PI / 180)} y2={40 + 34 * Math.sin(deg * Math.PI / 180)}
               stroke="#FFB347" strokeWidth="2.5" strokeLinecap="round" />
           ))}
-          {/* Butterfly */}
-          <ellipse cx="430" cy="90" rx="18" ry="13" fill="#FFB3C6" fillOpacity="0.8" />
-          <ellipse cx="430" cy="107" rx="12" ry="9" fill="#FFD6E0" fillOpacity="0.8" />
-          <ellipse cx="462" cy="90" rx="18" ry="13" fill="#C9B8E8" fillOpacity="0.8" />
-          <ellipse cx="462" cy="107" rx="12" ry="9" fill="#E0D4F5" fillOpacity="0.8" />
-          <ellipse cx="446" cy="98" rx="2.5" ry="10" fill="#333" />
         </svg>
       </div>
 
