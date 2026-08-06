@@ -387,8 +387,9 @@ function Hero() {
       <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:pt-28 sm:pb-32 grid gap-8 items-center">
         <div className="text-center lg:text-left">
           <div className="flex justify-center mb-3 sm:mb-6">
-            <img src="./logo.png" alt="Kindergarten Logo" className="h-24 sm:h-28 md:h-32 w-auto max-w-[200px] object-contain animate-pop-in mx-auto" />
-          </div>          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-3 sm:mb-4"
+            <img src="/logo.png" alt="Kindergarten Logo" className="h-24 sm:h-28 md:h-32 w-auto max-w-[200px] object-contain animate-pop-in mx-auto" />
+          </div>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-3 sm:mb-4"
             style={{ fontFamily: "'Baloo 2', cursive", color: '#333' }}>
             Where Every{' '}
             <span style={{ background: 'linear-gradient(135deg, #FF6B6B, #FF9F43, #FFE066)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
