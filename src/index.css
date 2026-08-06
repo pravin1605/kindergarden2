@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700;800&display=swap');
 @import 'tailwindcss';
 
-@theme {
+:root {
   --font-display: 'Baloo 2', cursive;
   --font-body: 'Nunito', sans-serif;
 

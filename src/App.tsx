@@ -13,9 +13,9 @@ function Cloud({ className = '', style = {} }: { className?: string; style?: Rea
   )
 }
 
-function SmilingSun({ className = '' }: { className?: string }) {
+function SmilingSun({ className = '', style = {} }: { className?: string; style?: React.CSSProperties }) {
   return (
-    <svg viewBox="0 0 100 100" className={className} fill="none">
+    <svg viewBox="0 0 100 100" className={className} style={style} fill="none">
       <g className="animate-spin-slow" style={{ transformOrigin: '50px 50px' }}>
         {[0,30,60,90,120,150,180,210,240,270,300,330].map((deg, i) => (
           <line key={i} x1="50" y1="50"
@@ -56,6 +56,26 @@ function Balloon({ color, className = '', style = {} }: { color: string; classNa
       <ellipse cx="22" cy="22" rx="7" ry="9" fill="white" fillOpacity="0.3" />
       <path d="M30 60 Q28 72 30 80 Q32 88 30 95" stroke="#888" strokeWidth="1.5" strokeLinecap="round" />
       <path d="M30 60 L33 65" stroke={color} strokeWidth="2" strokeLinecap="round" />
+    </svg>
+  )
+}
+
+function Butterfly({ className = '', style = {} }: { className?: string; style?: React.CSSProperties }) {
+  return (
+    <svg viewBox="0 0 80 50" className={className} style={style} fill="none">
+      <g className="animate-flutter">
+        <ellipse cx="25" cy="18" rx="22" ry="16" fill="#FFB3C6" fillOpacity="0.8" stroke="#FF8FAB" strokeWidth="1" />
+        <ellipse cx="25" cy="35" rx="16" ry="12" fill="#FFD6E0" fillOpacity="0.8" stroke="#FF8FAB" strokeWidth="1" />
+      </g>
+      <g className="animate-flutter" style={{ animationDelay: '0.1s' }}>
+        <ellipse cx="55" cy="18" rx="22" ry="16" fill="#C9B8E8" fillOpacity="0.8" stroke="#9B7ED4" strokeWidth="1" />
+        <ellipse cx="55" cy="35" rx="16" ry="12" fill="#E0D4F5" fillOpacity="0.8" stroke="#9B7ED4" strokeWidth="1" />
+      </g>
+      <ellipse cx="40" cy="25" rx="3" ry="12" fill="#333" />
+      <path d="M38 13 Q36 6 34 4" stroke="#333" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M42 13 Q44 6 46 4" stroke="#333" strokeWidth="1.5" strokeLinecap="round" />
+      <circle cx="34" cy="4" r="2" fill="#333" />
+      <circle cx="46" cy="4" r="2" fill="#333" />
     </svg>
   )
 }
@@ -106,9 +126,9 @@ function TeddyBear({ className = '' }: { className?: string }) {
   )
 }
 
-function BuildingBlock({ letter, color, className = '' }: { letter: string; color: string; className?: string }) {
+function BuildingBlock({ letter, color, className = '', style = {} }: { letter: string; color: string; className?: string; style?: React.CSSProperties }) {
   return (
-    <svg viewBox="0 0 60 60" className={className} fill="none">
+    <svg viewBox="0 0 60 60" className={className} style={style} fill="none">
       <rect x="4" y="4" width="52" height="52" rx="8" fill={color} />
       <rect x="4" y="4" width="52" height="52" rx="8" fill="white" fillOpacity="0.1" />
       <rect x="2" y="2" width="52" height="52" rx="8" fill={color} stroke="white" strokeOpacity="0.3" strokeWidth="2" />
@@ -227,6 +247,18 @@ function Flower({ petalColor = '#FFB3C6', stemColor = '#A8E6CF', className = '',
       ))}
       <circle cx="30" cy="28" r="6" fill="#FFE066" stroke="#FFB347" strokeWidth="1.5" />
       <circle cx="28" cy="26" r="2" fill="white" opacity="0.5" />
+    </svg>
+  )
+}
+
+function Bubble({ size = 'md', className = '', style = {} }: { size?: 'sm' | 'md' | 'lg'; className?: string; style?: React.CSSProperties }) {
+  const sizeMap = { sm: 6, md: 12, lg: 18 }
+  const r = sizeMap[size]
+  return (
+    <svg viewBox={`0 0 ${r * 2} ${r * 2}`} className={className} style={style} fill="none">
+      <circle cx={r} cy={r} r={r} stroke="#87CEEB" strokeWidth="0.5" fill="none" fillOpacity="0.1" />
+      <circle cx={r - 2} cy={r - 2} r={2} fill="white" opacity="0.4" />
+      <circle cx={r - 4} cy={r - 4} r="1" fill="white" opacity="0.3" />
     </svg>
   )
 }
@@ -365,9 +397,6 @@ function Hero() {
       <Balloon color="#A8E6CF" className="absolute w-8 sm:w-9 md:w-10 animate-float delay-1000" style={{ top: '25%', right: '15%' }} />
       <Balloon color="#C9B8E8" className="absolute w-10 sm:w-11 md:w-12 animate-float delay-500" style={{ top: '60%', left: '5%' }} />
 
-      {/* Kite */}
-      <Kite className="absolute w-14 sm:w-15 md:w-16 animate-float-slow" style={{ top: '20%', right: '40%' }} />
-
       {/* Paper airplane */}
       <PaperAirplane className="absolute w-16 sm:w-18 md:w-20 animate-drift2" style={{ top: '45%', animationDuration: '18s', animationDelay: '6s' }} />
 
@@ -500,6 +529,7 @@ function Programs() {
       {/* Decorative elements */}
       <Star className="absolute w-10 animate-twinkle" style={{ top: '10%', left: '3%' }} color="#FFE066" />
       <Star className="absolute w-7 animate-twinkle delay-500" style={{ top: '60%', right: '4%' }} color="#FFB3C6" />
+      <Butterfly className="absolute w-14 animate-sway" style={{ top: '15%', right: '8%' }} />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-10 sm:mb-14">
@@ -655,6 +685,7 @@ function Gallery() {
 
   return (
     <section id="gallery" className="relative py-20 overflow-hidden" style={{ background: '#FFF0F4' }}>
+      <Butterfly className="absolute w-14 animate-sway" style={{ top: '10%', left: '4%' }} />
       <Balloon color="#FFE066" className="absolute w-12 animate-float delay-500" style={{ top: '20%', right: '5%' }} />
       <Star className="absolute w-7 animate-twinkle delay-300" style={{ bottom: '20%', left: '6%' }} color="#C9B8E8" />
 
@@ -834,6 +865,12 @@ function Footer() {
               x2={80 + 34 * Math.cos(deg * Math.PI / 180)} y2={40 + 34 * Math.sin(deg * Math.PI / 180)}
               stroke="#FFB347" strokeWidth="2.5" strokeLinecap="round" />
           ))}
+          {/* Butterfly */}
+          <ellipse cx="430" cy="90" rx="18" ry="13" fill="#FFB3C6" fillOpacity="0.8" />
+          <ellipse cx="430" cy="107" rx="12" ry="9" fill="#FFD6E0" fillOpacity="0.8" />
+          <ellipse cx="462" cy="90" rx="18" ry="13" fill="#C9B8E8" fillOpacity="0.8" />
+          <ellipse cx="462" cy="107" rx="12" ry="9" fill="#E0D4F5" fillOpacity="0.8" />
+          <ellipse cx="446" cy="98" rx="2.5" ry="10" fill="#333" />
         </svg>
       </div>
 
