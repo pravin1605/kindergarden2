@@ -212,6 +212,57 @@ function Rabbit({ className = '' }: { className?: string }) {
   )
 }
 
+function Lollipop({ color = '#FF6B6B', className = '', style = {} }: { color?: string; className?: string; style?: React.CSSProperties }) {
+  return (
+    <svg viewBox="0 0 60 120" className={className} style={style} fill="none">
+      <circle cx="30" cy="30" r="28" fill={color} stroke={color} strokeWidth="2" />
+      <circle cx="22" cy="22" r="8" fill="white" fillOpacity="0.3" />
+      <path d="M30 58 Q28 75 30 95 Q32 105 30 120" stroke="#8B6F47" strokeWidth="3" strokeLinecap="round" />
+      <rect x="26" y="95" width="8" height="10" rx="2" fill="#8B6F47" opacity="0.5" />
+    </svg>
+  )
+}
+
+function IceCream({ color1 = '#FFB347', color2 = '#FF6B6B', className = '', style = {} }: { color1?: string; color2?: string; className?: string; style?: React.CSSProperties }) {
+  return (
+    <svg viewBox="0 0 70 100" className={className} style={style} fill="none">
+      <polygon points="35,45 15,85 55,85" fill={color1} stroke="#D4941E" strokeWidth="1" />
+      <ellipse cx="35" cy="45" rx="26" ry="24" fill={color2} stroke="#E63946" strokeWidth="1.5" />
+      <ellipse cx="25" cy="35" rx="8" ry="10" fill="white" fillOpacity="0.25" />
+      <circle cx="35" cy="55" r="4" fill="white" fillOpacity="0.2" />
+      <circle cx="45" cy="50" r="3" fill="white" fillOpacity="0.15" />
+    </svg>
+  )
+}
+
+function Flower({ petalColor = '#FFB3C6', stemColor = '#A8E6CF', className = '', style = {} }: { petalColor?: string; stemColor?: string; className?: string; style?: React.CSSProperties }) {
+  return (
+    <svg viewBox="0 0 60 80" className={className} style={style} fill="none">
+      <line x1="30" y1="70" x2="30" y2="30" stroke={stemColor} strokeWidth="2.5" strokeLinecap="round" />
+      <path d="M26 55 Q20 50 18 45" stroke={stemColor} strokeWidth="2" strokeLinecap="round" fill="none" opacity="0.7" />
+      <ellipse cx="16" cy="43" rx="4" ry="6" fill={stemColor} opacity="0.6" transform="rotate(-35 16 43)" />
+      {[0,60,120,180,240,300].map((deg, i) => (
+        <ellipse key={i} cx={30 + 14 * Math.cos(deg * Math.PI / 180)} cy={28 + 14 * Math.sin(deg * Math.PI / 180)} 
+          rx="7" ry="10" fill={petalColor} transform={`rotate(${deg} ${30 + 14 * Math.cos(deg * Math.PI / 180)} ${28 + 14 * Math.sin(deg * Math.PI / 180)})`} opacity="0.85" />
+      ))}
+      <circle cx="30" cy="28" r="6" fill="#FFE066" stroke="#FFB347" strokeWidth="1.5" />
+      <circle cx="28" cy="26" r="2" fill="white" opacity="0.5" />
+    </svg>
+  )
+}
+
+function Bubble({ size = 'md', className = '', style = {} }: { size?: 'sm' | 'md' | 'lg'; className?: string; style?: React.CSSProperties }) {
+  const sizeMap = { sm: 6, md: 12, lg: 18 }
+  const r = sizeMap[size]
+  return (
+    <svg viewBox={`0 0 ${r * 2} ${r * 2}`} className={className} style={style} fill="none">
+      <circle cx={r} cy={r} r={r} stroke="#87CEEB" strokeWidth="0.5" fill="none" fillOpacity="0.1" />
+      <circle cx={r - 2} cy={r - 2} r={2} fill="white" opacity="0.4" />
+      <circle cx={r - 4} cy={r - 4} r="1" fill="white" opacity="0.3" />
+    </svg>
+  )
+}
+
 // ─── Loading Screen ──────────────────────────────────────────────────────────
 
 function LoadingScreen({ onDone }: { onDone: () => void }) {
@@ -357,6 +408,26 @@ function Hero() {
       {/* Paper airplane - hidden on mobile */}
       <PaperAirplane className="hidden md:block absolute w-20 animate-drift2" style={{ top: '45%', animationDuration: '18s', animationDelay: '6s' }} />
 
+      {/* Lollipops - hidden on mobile */}
+      <Lollipop color="#FF6B6B" className="hidden md:block absolute w-12 animate-float" style={{ top: '35%', left: '20%' }} />
+      <Lollipop color="#FFE066" className="hidden md:block absolute w-10 animate-float delay-500" style={{ top: '55%', right: '25%' }} />
+      <Lollipop color="#87CEEB" className="hidden md:block absolute w-11 animate-float delay-1000" style={{ top: '42%', right: '8%' }} />
+
+      {/* Ice cream cones - hidden on mobile */}
+      <IceCream color1="#FFB347" color2="#FF9F43" className="hidden md:block absolute w-14 animate-float delay-700" style={{ top: '28%', left: '3%' }} />
+      <IceCream color1="#D4A574" color2="#FFB3C6" className="hidden md:block absolute w-12 animate-float delay-300" style={{ top: '48%', left: '78%' }} />
+
+      {/* Flowers - hidden on mobile */}
+      <Flower petalColor="#FFB3C6" stemColor="#A8E6CF" className="hidden md:block absolute w-10 animate-sway" style={{ top: '62%', left: '20%' }} />
+      <Flower petalColor="#FFE0B3" stemColor="#A8E6CF" className="hidden md:block absolute w-8 animate-sway delay-500" style={{ top: '38%', right: '45%' }} />
+      <Flower petalColor="#C9B8E8" stemColor="#87CEEB" className="hidden md:block absolute w-9 animate-sway delay-1000" style={{ top: '18%', right: '5%' }} />
+
+      {/* Bubbles - hidden on mobile */}
+      <Bubble size="lg" className="hidden md:block absolute animate-float" style={{ top: '12%', left: '25%' }} />
+      <Bubble size="md" className="hidden md:block absolute animate-float delay-700" style={{ top: '52%', left: '45%' }} />
+      <Bubble size="sm" className="hidden md:block absolute animate-float delay-300" style={{ top: '65%', right: '18%' }} />
+      <Bubble size="md" className="hidden md:block absolute animate-float delay-1000" style={{ top: '22%', right: '12%' }} />
+
       {/* Rainbow behind text - hidden on mobile */}
       <Rainbow className="hidden md:block absolute w-full opacity-30" style={{ top: '20%', left: 0 }} />
 
@@ -364,7 +435,7 @@ function Hero() {
       <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:pt-28 sm:pb-32 grid gap-8 lg:grid-cols-2 lg:gap-12 items-center">
         <div className="text-center lg:text-left">
           <div className="flex justify-center lg:justify-start mb-3 sm:mb-6">
-            <img src="/logo.png" alt="Kindergarten Logo" className="h-24 sm:h-28 md:h-32 w-auto object-contain animate-pop-in" />
+            <img src="./logo.png" alt="Kindergarten Logo" className="h-24 sm:h-28 md:h-32 w-auto object-contain animate-pop-in" />
           </div>
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-3 sm:mb-4"
             style={{ fontFamily: "'Baloo 2', cursive", color: '#333' }}>
