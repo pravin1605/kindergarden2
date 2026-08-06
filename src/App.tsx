@@ -233,24 +233,24 @@ function LoadingScreen({ onDone }: { onDone: () => void }) {
   const blockColors = ['#FF6B6B','#FF9F43','#FFE066','#A8E6CF','#87CEEB','#C9B8E8','#FFB3C6']
 
   return (
-    <div className="loading-screen">
-      <SmilingSun className="w-20 h-20 animate-pulse-soft mb-4" />
-      <h1 className="text-4xl font-bold text-center mb-2" style={{ fontFamily: "'Baloo 2', cursive", color: '#FF6B6B' }}>
+    <div className="loading-screen px-4 sm:px-6">
+      <SmilingSun className="w-16 h-16 sm:w-20 sm:h-20 animate-pulse-soft mb-4" />
+      <h1 className="text-3xl sm:text-4xl font-bold text-center mb-2" style={{ fontFamily: "'Baloo 2', cursive", color: '#FF6B6B' }}>
         Little Stars Kindergarten
       </h1>
-      <div className="flex gap-3 mb-8">
+      <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-6 sm:mb-8">
         {blocks.map((l, i) => (
           <BuildingBlock key={i} letter={l} color={blockColors[i]}
-            className={`w-12 h-12 animate-pop-in`}
+            className={`w-10 h-10 sm:w-12 sm:h-12 animate-pop-in`}
             style={{ animationDelay: `${i * 0.1}s` } as React.CSSProperties} />
         ))}
       </div>
       {/* Rainbow arc */}
-      <div className="relative w-64 h-16 mb-6">
+      <div className="relative w-56 sm:w-64 h-14 sm:h-16 mb-6">
         <Rainbow className="absolute inset-0 w-full h-full" />
       </div>
       {/* Train track */}
-      <div className="relative w-full h-16 overflow-hidden">
+      <div className="relative w-full max-w-xl h-16 overflow-hidden">
         <div className="absolute bottom-0 w-full h-2 bg-amber-200 rounded" />
         <svg viewBox="0 0 120 40" style={{ position: 'absolute', bottom: 4, left: trainPos, width: 120 }} fill="none">
           <rect x="0" y="10" width="110" height="22" rx="6" fill="#FF6B6B" />
@@ -265,11 +265,11 @@ function LoadingScreen({ onDone }: { onDone: () => void }) {
           <path d="M0 14 Q-8 6 -4 0" stroke="white" strokeWidth="3" fill="none" strokeOpacity="0.7" />
         </svg>
       </div>
-      <div className="mt-6 w-64 h-3 bg-white rounded-full overflow-hidden shadow-inner">
+      <div className="mt-6 w-full max-w-xs sm:max-w-sm h-3 bg-white rounded-full overflow-hidden shadow-inner">
         <div className="h-full rounded-full transition-all duration-100"
           style={{ width: `${progress}%`, background: 'linear-gradient(90deg, #FF6B6B, #FF9F43, #FFE066, #A8E6CF, #87CEEB, #C9B8E8)' }} />
       </div>
-      <p className="mt-2 text-sm font-semibold" style={{ color: '#888', fontFamily: "'Nunito', sans-serif" }}>
+      <p className="mt-2 text-sm font-semibold text-center" style={{ color: '#888', fontFamily: "'Nunito', sans-serif" }}>
         {progress < 100 ? 'Getting ready for fun...' : 'Let\'s go! 🎉'}
       </p>
     </div>
@@ -289,12 +289,12 @@ function Navbar() {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'shadow-lg' : ''}`}
       style={{ background: scrolled ? 'rgba(255,255,255,0.95)' : 'transparent', backdropFilter: scrolled ? 'blur(12px)' : 'none' }}>
-      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <SmilingSun className="w-10 h-10" />
-          <div>
-            <span className="text-xl font-bold" style={{ fontFamily: "'Baloo 2', cursive", color: '#FF6B6B' }}>Little Stars</span>
-            <span className="block text-xs font-semibold" style={{ color: '#FFB347', fontFamily: "'Nunito', sans-serif" }}>Kindergarten</span>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between gap-3">
+        <div className="flex items-center gap-2 sm:gap-3 min-w-0">
+          <SmilingSun className="w-8 h-8 sm:w-10 sm:h-10 flex-shrink-0" />
+          <div className="min-w-0">
+            <span className="block text-lg sm:text-xl font-bold leading-none" style={{ fontFamily: "'Baloo 2', cursive", color: '#FF6B6B' }}>Little Stars</span>
+            <span className="block text-[11px] sm:text-xs font-semibold" style={{ color: '#FFB347', fontFamily: "'Nunito', sans-serif" }}>Kindergarten</span>
           </div>
         </div>
         <div className="hidden md:flex items-center gap-6">
@@ -306,9 +306,9 @@ function Navbar() {
             </a>
           ))}
         </div>
-        <button className="btn-pill px-5 py-2 text-white text-sm shadow-md"
+        <button className="btn-pill px-3 py-2 sm:px-5 sm:py-2 text-white text-xs sm:text-sm shadow-md"
           style={{ background: 'linear-gradient(135deg, #FF6B6B, #FF9F43)', fontFamily: "'Baloo 2', cursive" }}>
-          ✨ Enroll Now
+          ✨ Enroll
         </button>
       </div>
     </nav>
@@ -361,51 +361,51 @@ function Hero() {
       <Rainbow className="absolute w-full opacity-30" style={{ top: '20%', left: 0 }} />
 
       {/* Main content */}
-      <div className="relative z-10 max-w-6xl mx-auto px-6 pt-28 pb-32 grid md:grid-cols-2 gap-12 items-center">
-        <div>
-          <div className="flex gap-2 mb-4">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pt-24 pb-24 sm:pt-28 sm:pb-32 grid gap-8 lg:grid-cols-2 lg:gap-12 items-center">
+        <div className="text-center lg:text-left">
+          <div className="flex justify-center lg:justify-start gap-2 mb-4">
             <BuildingBlock letter="A" color="#FF6B6B" className="w-10 h-10 animate-pop-in" />
             <BuildingBlock letter="B" color="#FFB347" className="w-10 h-10 animate-pop-in delay-100" />
             <BuildingBlock letter="C" color="#FFE066" className="w-10 h-10 animate-pop-in delay-200" />
           </div>
-          <h1 className="text-5xl md:text-6xl font-extrabold leading-tight mb-4"
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-4"
             style={{ fontFamily: "'Baloo 2', cursive", color: '#333' }}>
             Where Every Child's{' '}
             <span style={{ background: 'linear-gradient(135deg, #FF6B6B, #FF9F43, #FFE066)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
               Magic Begins
             </span>{' '}✨
           </h1>
-          <p className="text-lg leading-relaxed mb-8" style={{ color: '#555', fontFamily: "'Nunito', sans-serif" }}>
+          <p className="text-base sm:text-lg leading-relaxed mb-8 max-w-2xl mx-auto lg:mx-0" style={{ color: '#555', fontFamily: "'Nunito', sans-serif" }}>
             A joyful, nurturing space where little ones explore, create, laugh, and grow.
             Enroll your child in a world of imagination and wonder today!
           </p>
-          <div className="flex flex-wrap gap-4">
-            <button className="btn-pill px-8 py-4 text-white text-lg shadow-xl"
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center lg:justify-start gap-3 sm:gap-4">
+            <button className="btn-pill px-6 sm:px-8 py-3 sm:py-4 text-white text-base sm:text-lg shadow-xl"
               style={{ background: 'linear-gradient(135deg, #FF6B6B, #FF9F43)' }}>
               🎈 Start the Journey
             </button>
-            <button className="btn-pill px-8 py-4 text-lg shadow-md"
+            <button className="btn-pill px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg shadow-md"
               style={{ background: 'white', color: '#FF6B6B', border: '2px solid #FFB3C6' }}>
               🎥 Watch Our Story
             </button>
           </div>
           {/* Stats */}
-          <div className="flex gap-6 mt-10">
+          <div className="flex flex-wrap justify-center lg:justify-start gap-4 sm:gap-6 mt-8 sm:mt-10">
             {[['500+','Happy Kids'],['20+','Caring Staff'],['15+','Years of Joy']].map(([num, label]) => (
-              <div key={label} className="text-center">
-                <div className="text-2xl font-bold" style={{ fontFamily: "'Baloo 2', cursive", color: '#FF6B6B' }}>{num}</div>
-                <div className="text-xs font-semibold" style={{ color: '#888', fontFamily: "'Nunito', sans-serif" }}>{label}</div>
+              <div key={label} className="text-center min-w-[90px]">
+                <div className="text-xl sm:text-2xl font-bold" style={{ fontFamily: "'Baloo 2', cursive", color: '#FF6B6B' }}>{num}</div>
+                <div className="text-[11px] sm:text-xs font-semibold" style={{ color: '#888', fontFamily: "'Nunito', sans-serif" }}>{label}</div>
               </div>
             ))}
           </div>
         </div>
 
         {/* Hero illustration */}
-        <div className="relative flex justify-center items-end h-80 md:h-auto">
+        <div className="relative flex justify-center items-end h-72 sm:h-80 md:h-auto mt-2 lg:mt-0">
           <TeddyBear className="w-32 h-32 absolute bottom-0 left-4 animate-float delay-300" />
           <Rabbit className="w-24 h-28 absolute bottom-0 right-4 animate-float delay-700" />
           {/* Playground scene */}
-          <div className="relative w-72 h-72 rounded-full shadow-2xl flex items-center justify-center"
+          <div className="relative w-full max-w-[18rem] sm:max-w-[22rem] h-64 sm:h-72 rounded-full shadow-2xl flex items-center justify-center"
             style={{ background: 'linear-gradient(135deg, #C8F2E0 0%, #C8E9F8 50%, #E0D4F5 100%)' }}>
             <Rainbow className="absolute w-full opacity-60" style={{ top: '10%' }} />
             {/* Children stick figures */}
@@ -476,8 +476,8 @@ function Programs() {
       <Star className="absolute w-7 animate-twinkle delay-500" style={{ top: '60%', right: '4%' }} color="#FFB3C6" />
       <Butterfly className="absolute w-14 animate-sway" style={{ top: '15%', right: '8%' }} />
 
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-14">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="text-center mb-10 sm:mb-14">
           <div className="flex justify-center gap-2 mb-3">
             <BuildingBlock letter="1" color="#FF6B6B" className="w-9 h-9" />
             <BuildingBlock letter="2" color="#FF9F43" className="w-9 h-9" />
@@ -491,9 +491,9 @@ function Programs() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
           {programs.map((p, i) => (
-            <div key={i} className="card-hover rounded-3xl p-7 cursor-pointer"
+            <div key={i} className="card-hover rounded-3xl p-5 sm:p-7 cursor-pointer"
               style={{ background: p.bg, border: `2px solid ${p.color}40` }}>
               <div className="text-4xl mb-4">{p.icon}</div>
               <div className="inline-block px-3 py-1 rounded-full text-xs font-bold mb-3"
@@ -538,8 +538,8 @@ function WhyUs() {
       <Cloud className="absolute w-32 opacity-50" style={{ top: '50%', right: '0' }} />
       <Kite className="absolute w-14 animate-float-slow" style={{ top: '10%', right: '12%' }} />
 
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-14">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="text-center mb-10 sm:mb-14">
           <h2 className="text-4xl font-bold mb-3" style={{ fontFamily: "'Baloo 2', cursive", color: '#333' }}>
             Why Families Love Us 💕
           </h2>
@@ -547,9 +547,9 @@ function WhyUs() {
             We believe every child deserves the best start in life
           </p>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
           {reasons.map((r, i) => (
-            <div key={i} className="card-hover bg-white rounded-3xl p-7 shadow-md">
+            <div key={i} className="card-hover bg-white rounded-3xl p-5 sm:p-7 shadow-md">
               <div className="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl mb-4"
                 style={{ background: ['#FFD6E0','#C8E9F8','#C8F2E0','#FFF3AA','#E8DEFF','#FFE4CC'][i % 6] }}>
                 {r.icon}
@@ -583,8 +583,8 @@ function Activities() {
       <Star className="absolute w-8 animate-twinkle" style={{ top: '8%', right: '5%' }} color="#FFE066" />
       <PaperAirplane className="absolute w-16 animate-float-slow" style={{ top: '20%', left: '5%' }} />
 
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-14">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="text-center mb-10 sm:mb-14">
           <h2 className="text-4xl font-bold mb-3" style={{ fontFamily: "'Baloo 2', cursive", color: '#333' }}>
             A Day of Adventures 🌟
           </h2>
@@ -592,7 +592,7 @@ function Activities() {
             Every day is packed with joyful activities that spark creativity and growth
           </p>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {activities.map((a, i) => (
             <div key={i} className="card-hover rounded-3xl p-5 text-center cursor-pointer"
               style={{ background: `${a.color}30`, border: `2px solid ${a.color}60` }}>
@@ -634,8 +634,8 @@ function Gallery() {
       <Balloon color="#FFE066" className="absolute w-12 animate-float delay-500" style={{ top: '20%', right: '5%' }} />
       <Star className="absolute w-7 animate-twinkle delay-300" style={{ bottom: '20%', left: '6%' }} color="#C9B8E8" />
 
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-14">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="text-center mb-10 sm:mb-14">
           <h2 className="text-4xl font-bold mb-3" style={{ fontFamily: "'Baloo 2', cursive", color: '#333' }}>
             Snapshots of Joy 📸
           </h2>
@@ -643,7 +643,7 @@ function Gallery() {
             A peek into the magical moments that happen every day at Little Stars
           </p>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 place-items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 place-items-center">
           {photos.map((p, i) => (
             <div key={i} className="polaroid w-full max-w-xs"
               style={{ transform: `rotate(${p.rotate})`, background: 'white', borderRadius: 8 }}>
@@ -682,13 +682,13 @@ function Testimonials() {
       <Cloud className="absolute w-36 opacity-50" style={{ top: '5%', right: '5%' }} />
       <Star className="absolute w-9 animate-twinkle" style={{ bottom: '15%', left: '8%' }} color="#FFE066" />
 
-      <div className="max-w-5xl mx-auto px-6">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-14">
           <h2 className="text-4xl font-bold mb-3" style={{ fontFamily: "'Baloo 2', cursive", color: '#333' }}>
             Happy Families 🌸
           </h2>
         </div>
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
           {reviews.map((r, i) => (
             <div key={i} className="card-hover bg-white rounded-3xl p-7 shadow-md">
               <div className="flex mb-3">
@@ -719,7 +719,7 @@ function Contact() {
       <Balloon color="#C9B8E8" className="absolute w-10 animate-float delay-500" style={{ top: '20%', right: '8%' }} />
       <Rainbow className="absolute w-full opacity-20" style={{ top: 0 }} />
 
-      <div className="max-w-3xl mx-auto px-6 text-center relative z-10">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center relative z-10">
         <SmilingSun className="w-16 h-16 mx-auto mb-4" />
         <h2 className="text-4xl font-bold mb-4" style={{ fontFamily: "'Baloo 2', cursive", color: '#333' }}>
           Ready to Join Our Family? 🎉
@@ -727,8 +727,8 @@ function Contact() {
         <p className="text-lg mb-8" style={{ color: '#555', fontFamily: "'Nunito', sans-serif" }}>
           Schedule a free tour and see the magic for yourself! Enrollment is open for the 2025–2026 year.
         </p>
-        <div className="bg-white rounded-3xl p-8 shadow-xl">
-          <div className="grid md:grid-cols-2 gap-4 mb-4">
+        <div className="bg-white rounded-3xl p-5 sm:p-8 shadow-xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 mb-4">
             <input placeholder="Parent's Name" className="w-full px-5 py-3 rounded-2xl border-2 text-sm outline-none focus:border-sky-300 transition-colors"
               style={{ borderColor: '#C8E9F8', fontFamily: "'Nunito', sans-serif" }} />
             <input placeholder="Child's Name & Age" className="w-full px-5 py-3 rounded-2xl border-2 text-sm outline-none focus:border-pink-300 transition-colors"
@@ -743,7 +743,7 @@ function Contact() {
             🌈 Book a Free Tour Today!
           </button>
         </div>
-        <div className="flex justify-center gap-8 mt-8">
+        <div className="flex flex-wrap justify-center gap-4 sm:gap-8 mt-8">
           {[['📍','123 Sunshine Lane, Joyville'],['📞','(555) 123-4567'],['✉️','hello@littlestars.edu']].map(([icon, text]) => (
             <div key={text} className="text-center">
               <div className="text-2xl mb-1">{icon}</div>
@@ -819,8 +819,8 @@ function Footer() {
         </svg>
       </div>
 
-      <div className="relative z-10 py-10 px-6" style={{ background: '#5FB87A' }}>
-        <div className="max-w-6xl mx-auto grid md:grid-cols-4 gap-8 text-white">
+      <div className="relative z-10 py-10 px-4 sm:px-6" style={{ background: '#5FB87A' }}>
+        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 text-white">
           <div>
             <div className="flex items-center gap-2 mb-3">
               <SmilingSun className="w-10 h-10" />

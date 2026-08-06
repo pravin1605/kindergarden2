@@ -41,6 +41,29 @@ body {
   font-family: 'Nunito', sans-serif;
   background-color: #EAF6FD;
   overflow-x: hidden;
+  font-size: 16px;
+}
+
+@media (max-width: 640px) {
+  body {
+    font-size: 15px;
+  }
+
+  .sparkle-cursor {
+    display: none;
+  }
+
+  .btn-pill {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .card-hover:hover {
+    transform: none;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  }
 }
 
 h1, h2, h3, h4, h5 {
