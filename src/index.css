@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700;800&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --font-display: 'Baloo 2', cursive;
+  --font-body: 'Nunito', sans-serif;
+
+  --color-sky: #87CEEB;
+  --color-sky-light: #C8E9F8;
+  --color-sky-soft: #EAF6FD;
+  --color-pink: #FFB3C6;
+  --color-pink-light: #FFD6E0;
+  --color-pink-soft: #FFF0F4;
+  --color-mint: #A8E6CF;
+  --color-mint-light: #C8F2E0;
+  --color-mint-soft: #EAFAF4;
+  --color-lavender: #C9B8E8;
+  --color-lavender-light: #E0D4F5;
+  --color-lavender-soft: #F3EEFF;
+  --color-yellow: #FFE066;
+  --color-yellow-light: #FFF3AA;
+  --color-yellow-soft: #FFFBE6;
+  --color-peach: #FFB347;
+  --color-peach-light: #FFD299;
+  --color-peach-soft: #FFF3E0;
+
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+  --radius-pill: 999px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background-color: #EAF6FD;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Baloo 2', cursive;
+}
+
+/* Cursor sparkle */
+.sparkle-cursor {
+  pointer-events: none;
+  position: fixed;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #FFE066 0%, #FFB347 60%, transparent 100%);
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  mix-blend-mode: multiply;
+  transition: opacity 0.1s;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #EAF6FD; }
+::-webkit-scrollbar-thumb { background: #C8E9F8; border-radius: 99px; }
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-18px); }
+}
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes drift {
+  0% { transform: translateX(-120px); }
+  100% { transform: translateX(calc(100vw + 120px)); }
+}
+@keyframes drift2 {
+  0% { transform: translateX(-150px); }
+  100% { transform: translateX(calc(100vw + 150px)); }
+}
+@keyframes floatUp {
+  0% { transform: translateY(0) scale(1); opacity: 0.8; }
+  100% { transform: translateY(-100vh) scale(0.6); opacity: 0; }
+}
+@keyframes flutter {
+  0%, 100% { transform: scaleX(1) rotate(-5deg); }
+  50% { transform: scaleX(0.5) rotate(5deg); }
+}
+@keyframes twinkle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.3; transform: scale(0.6); }
+}
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes bounce-in {
+  0% { transform: scale(0.8); }
+  60% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+@keyframes trainMove {
+  0% { transform: translateX(-200px); }
+  100% { transform: translateX(calc(100vw + 200px)); }
+}
+@keyframes pencilDraw {
+  0% { stroke-dashoffset: 400; }
+  100% { stroke-dashoffset: 0; }
+}
+@keyframes popIn {
+  0% { transform: scale(0) rotate(-10deg); opacity: 0; }
+  70% { transform: scale(1.1) rotate(2deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+@keyframes sway {
+  0%, 100% { transform: rotate(-4deg) translateX(0); }
+  50% { transform: rotate(4deg) translateX(4px); }
+}
+@keyframes pulse-soft {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+}
+@keyframes riseUp {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes sunRays {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-float { animation: float 4s ease-in-out infinite; }
+.animate-float-slow { animation: floatSlow 6s ease-in-out infinite; }
+.animate-drift { animation: drift 28s linear infinite; }
+.animate-drift2 { animation: drift2 38s linear infinite; }
+.animate-float-up { animation: floatUp 6s ease-in infinite; }
+.animate-flutter { animation: flutter 0.4s ease-in-out infinite; }
+.animate-twinkle { animation: twinkle 2s ease-in-out infinite; }
+.animate-spin-slow { animation: spin-slow 12s linear infinite; }
+.animate-bounce-in { animation: bounce-in 0.5s ease-out forwards; }
+.animate-wiggle { animation: wiggle 2s ease-in-out infinite; }
+.animate-pop-in { animation: popIn 0.6s ease-out forwards; }
+.animate-sway { animation: sway 3s ease-in-out infinite; }
+.animate-pulse-soft { animation: pulse-soft 3s ease-in-out infinite; }
+.animate-rise-up { animation: riseUp 0.7s ease-out forwards; }
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-700 { animation-delay: 0.7s; }
+.delay-1000 { animation-delay: 1s; }
+.delay-1500 { animation-delay: 1.5s; }
+.delay-2000 { animation-delay: 2s; }
+.delay-3000 { animation-delay: 3s; }
+.delay-5000 { animation-delay: 5s; }
+.delay-8000 { animation-delay: 8s; }
+.delay-10000 { animation-delay: 10s; }
+.delay-12000 { animation-delay: 12s; }
+.delay-15000 { animation-delay: 15s; }
+.delay-20000 { animation-delay: 20s; }
+
+/* Hover card lift */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-8px) rotate(0.5deg);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+}
+
+/* Polaroid */
+.polaroid {
+  background: white;
+  padding: 12px 12px 36px 12px;
+  box-shadow: 4px 4px 20px rgba(0,0,0,0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.polaroid:hover {
+  transform: scale(1.05) rotate(0deg) !important;
+  box-shadow: 8px 12px 30px rgba(0,0,0,0.18);
+}
+
+/* Wavy divider */
+.wave-divider {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+.wave-divider svg {
+  display: block;
+  width: 100%;
+}
+
+/* Pill button */
+.btn-pill {
+  border-radius: 999px;
+  font-family: 'Baloo 2', cursive;
+  font-weight: 700;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-pill:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+.btn-pill:active {
+  transform: scale(0.97);
+}
+
+/* Loading screen */
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: linear-gradient(135deg, #EAF6FD 0%, #FFD6E0 40%, #E0D4F5 70%, #C8F2E0 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+.loading-screen.hidden {
+  opacity: 0;
+  visibility: hidden;
+}

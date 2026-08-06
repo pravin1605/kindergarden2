@@ -1,0 +1,10 @@
+{
+  "description": "Engages children and reassures parents with a vibrant, playful preschool website featuring cheerful animations, friendly illustrations, and a safe, welcoming design.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
