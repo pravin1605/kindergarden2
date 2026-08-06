@@ -322,86 +322,86 @@ function Hero() {
     <section id="about" className="relative min-h-screen flex items-center overflow-hidden"
       style={{ background: 'linear-gradient(180deg, #EAF6FD 0%, #FFD6E0 50%, #E0D4F5 100%)' }}>
 
-      {/* Drifting clouds */}
-      <Cloud className="absolute w-48 opacity-90 animate-drift" style={{ top: '8%', animationDuration: '28s' }} />
-      <Cloud className="absolute w-36 opacity-75 animate-drift2" style={{ top: '18%', animationDuration: '42s', animationDelay: '8s' }} />
-      <Cloud className="absolute w-56 opacity-80 animate-drift" style={{ top: '4%', animationDuration: '34s', animationDelay: '14s' }} />
+      {/* Drifting clouds - hidden on mobile */}
+      <Cloud className="hidden md:block absolute w-48 opacity-90 animate-drift" style={{ top: '8%', animationDuration: '28s' }} />
+      <Cloud className="hidden md:block absolute w-36 opacity-75 animate-drift2" style={{ top: '18%', animationDuration: '42s', animationDelay: '8s' }} />
+      <Cloud className="hidden md:block absolute w-56 opacity-80 animate-drift" style={{ top: '4%', animationDuration: '34s', animationDelay: '14s' }} />
 
-      {/* Sun */}
-      <SmilingSun className="absolute w-24 h-24 animate-pulse-soft" style={{ top: '10%', right: '8%' }} />
+      {/* Sun - hidden on mobile */}
+      <SmilingSun className="hidden md:block absolute w-24 h-24 animate-pulse-soft" style={{ top: '10%', right: '8%' }} />
 
-      {/* Birds */}
-      <Bird className="absolute w-10 animate-drift" style={{ top: '22%', animationDuration: '22s', animationDelay: '4s' }} />
-      <Bird className="absolute w-8 animate-drift2" style={{ top: '28%', animationDuration: '30s', animationDelay: '12s' }} />
+      {/* Birds - hidden on mobile */}
+      <Bird className="hidden md:block absolute w-10 animate-drift" style={{ top: '22%', animationDuration: '22s', animationDelay: '4s' }} />
+      <Bird className="hidden md:block absolute w-8 animate-drift2" style={{ top: '28%', animationDuration: '30s', animationDelay: '12s' }} />
 
-      {/* Stars */}
-      <Star className="absolute w-8 animate-twinkle" style={{ top: '35%', left: '5%' }} color="#FFE066" />
-      <Star className="absolute w-6 animate-twinkle delay-500" style={{ top: '15%', left: '30%' }} color="#FFB3C6" />
-      <Star className="absolute w-5 animate-twinkle delay-1000" style={{ top: '50%', right: '20%' }} color="#C9B8E8" />
+      {/* Stars - hidden on mobile */}
+      <Star className="hidden md:block absolute w-8 animate-twinkle" style={{ top: '35%', left: '5%' }} color="#FFE066" />
+      <Star className="hidden md:block absolute w-6 animate-twinkle delay-500" style={{ top: '15%', left: '30%' }} color="#FFB3C6" />
+      <Star className="hidden md:block absolute w-5 animate-twinkle delay-1000" style={{ top: '50%', right: '20%' }} color="#C9B8E8" />
 
-      {/* Balloons */}
-      <Balloon color="#FF6B6B" className="absolute w-16 animate-float" style={{ top: '20%', left: '8%' }} />
-      <Balloon color="#FFE066" className="absolute w-12 animate-float delay-700" style={{ top: '30%', left: '15%' }} />
-      <Balloon color="#87CEEB" className="absolute w-14 animate-float delay-300" style={{ top: '15%', right: '25%' }} />
-      <Balloon color="#A8E6CF" className="absolute w-10 animate-float delay-1000" style={{ top: '25%', right: '15%' }} />
-      <Balloon color="#C9B8E8" className="absolute w-12 animate-float delay-500" style={{ top: '60%', left: '5%' }} />
+      {/* Balloons - hidden on mobile */}
+      <Balloon color="#FF6B6B" className="hidden md:block absolute w-16 animate-float" style={{ top: '20%', left: '8%' }} />
+      <Balloon color="#FFE066" className="hidden md:block absolute w-12 animate-float delay-700" style={{ top: '30%', left: '15%' }} />
+      <Balloon color="#87CEEB" className="hidden md:block absolute w-14 animate-float delay-300" style={{ top: '15%', right: '25%' }} />
+      <Balloon color="#A8E6CF" className="hidden md:block absolute w-10 animate-float delay-1000" style={{ top: '25%', right: '15%' }} />
+      <Balloon color="#C9B8E8" className="hidden md:block absolute w-12 animate-float delay-500" style={{ top: '60%', left: '5%' }} />
 
-      {/* Butterflies */}
-      <Butterfly className="absolute w-16 animate-sway" style={{ top: '40%', left: '12%' }} />
-      <Butterfly className="absolute w-12 animate-sway delay-1000" style={{ top: '55%', right: '10%' }} />
-      <Butterfly className="absolute w-10 animate-sway delay-500" style={{ top: '30%', right: '30%' }} />
+      {/* Butterflies - hidden on mobile */}
+      <Butterfly className="hidden md:block absolute w-16 animate-sway" style={{ top: '40%', left: '12%' }} />
+      <Butterfly className="hidden md:block absolute w-12 animate-sway delay-1000" style={{ top: '55%', right: '10%' }} />
+      <Butterfly className="hidden md:block absolute w-10 animate-sway delay-500" style={{ top: '30%', right: '30%' }} />
 
-      {/* Kite */}
-      <Kite className="absolute w-16 animate-float-slow" style={{ top: '20%', right: '40%' }} />
+      {/* Kite - hidden on mobile */}
+      <Kite className="hidden md:block absolute w-16 animate-float-slow" style={{ top: '20%', right: '40%' }} />
 
-      {/* Paper airplane */}
-      <PaperAirplane className="absolute w-20 animate-drift2" style={{ top: '45%', animationDuration: '18s', animationDelay: '6s' }} />
+      {/* Paper airplane - hidden on mobile */}
+      <PaperAirplane className="hidden md:block absolute w-20 animate-drift2" style={{ top: '45%', animationDuration: '18s', animationDelay: '6s' }} />
 
-      {/* Rainbow behind text */}
-      <Rainbow className="absolute w-full opacity-30" style={{ top: '20%', left: 0 }} />
+      {/* Rainbow behind text - hidden on mobile */}
+      <Rainbow className="hidden md:block absolute w-full opacity-30" style={{ top: '20%', left: 0 }} />
 
       {/* Main content */}
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pt-24 pb-24 sm:pt-28 sm:pb-32 grid gap-8 lg:grid-cols-2 lg:gap-12 items-center">
+      <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:pt-28 sm:pb-32 grid gap-8 lg:grid-cols-2 lg:gap-12 items-center">
         <div className="text-center lg:text-left">
-          <div className="flex justify-center lg:justify-start gap-2 mb-4">
-            <BuildingBlock letter="A" color="#FF6B6B" className="w-10 h-10 animate-pop-in" />
-            <BuildingBlock letter="B" color="#FFB347" className="w-10 h-10 animate-pop-in delay-100" />
-            <BuildingBlock letter="C" color="#FFE066" className="w-10 h-10 animate-pop-in delay-200" />
+          <div className="flex justify-center lg:justify-start gap-2 mb-3 sm:mb-4">
+            <BuildingBlock letter="A" color="#FF6B6B" className="w-9 h-9 sm:w-10 sm:h-10 animate-pop-in" />
+            <BuildingBlock letter="B" color="#FFB347" className="w-9 h-9 sm:w-10 sm:h-10 animate-pop-in delay-100" />
+            <BuildingBlock letter="C" color="#FFE066" className="w-9 h-9 sm:w-10 sm:h-10 animate-pop-in delay-200" />
           </div>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-4"
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-3 sm:mb-4"
             style={{ fontFamily: "'Baloo 2', cursive", color: '#333' }}>
-            Where Every Child's{' '}
+            Where Every{' '}
             <span style={{ background: 'linear-gradient(135deg, #FF6B6B, #FF9F43, #FFE066)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-              Magic Begins
-            </span>{' '}✨
+              Child's Magic
+            </span>{' '}Begins ✨
           </h1>
-          <p className="text-base sm:text-lg leading-relaxed mb-8 max-w-2xl mx-auto lg:mx-0" style={{ color: '#555', fontFamily: "'Nunito', sans-serif" }}>
+          <p className="text-sm sm:text-base md:text-lg leading-relaxed mb-6 sm:mb-8 max-w-2xl mx-auto lg:mx-0" style={{ color: '#555', fontFamily: "'Nunito', sans-serif" }}>
             A joyful, nurturing space where little ones explore, create, laugh, and grow.
             Enroll your child in a world of imagination and wonder today!
           </p>
-          <div className="flex flex-col sm:flex-row flex-wrap justify-center lg:justify-start gap-3 sm:gap-4">
-            <button className="btn-pill px-6 sm:px-8 py-3 sm:py-4 text-white text-base sm:text-lg shadow-xl"
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center lg:justify-start gap-2 sm:gap-4">
+            <button className="btn-pill px-5 sm:px-8 py-2 sm:py-4 text-white text-sm sm:text-base md:text-lg shadow-xl"
               style={{ background: 'linear-gradient(135deg, #FF6B6B, #FF9F43)' }}>
               🎈 Start the Journey
             </button>
-            <button className="btn-pill px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg shadow-md"
+            <button className="btn-pill px-5 sm:px-8 py-2 sm:py-4 text-sm sm:text-base md:text-lg shadow-md"
               style={{ background: 'white', color: '#FF6B6B', border: '2px solid #FFB3C6' }}>
               🎥 Watch Our Story
             </button>
           </div>
           {/* Stats */}
-          <div className="flex flex-wrap justify-center lg:justify-start gap-4 sm:gap-6 mt-8 sm:mt-10">
+          <div className="flex flex-wrap justify-center lg:justify-start gap-3 sm:gap-6 mt-6 sm:mt-10">
             {[['500+','Happy Kids'],['20+','Caring Staff'],['15+','Years of Joy']].map(([num, label]) => (
-              <div key={label} className="text-center min-w-[90px]">
-                <div className="text-xl sm:text-2xl font-bold" style={{ fontFamily: "'Baloo 2', cursive", color: '#FF6B6B' }}>{num}</div>
-                <div className="text-[11px] sm:text-xs font-semibold" style={{ color: '#888', fontFamily: "'Nunito', sans-serif" }}>{label}</div>
+              <div key={label} className="text-center min-w-[80px] sm:min-w-[90px]">
+                <div className="text-lg sm:text-xl md:text-2xl font-bold" style={{ fontFamily: "'Baloo 2', cursive", color: '#FF6B6B' }}>{num}</div>
+                <div className="text-[10px] sm:text-xs font-semibold" style={{ color: '#888', fontFamily: "'Nunito', sans-serif" }}>{label}</div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Hero illustration */}
-        <div className="relative flex justify-center items-end h-72 sm:h-80 md:h-auto mt-2 lg:mt-0">
+        {/* Hero illustration - hidden on small devices */}
+        <div className="hidden lg:flex relative justify-center items-end h-auto">
           <TeddyBear className="w-32 h-32 absolute bottom-0 left-4 animate-float delay-300" />
           <Rabbit className="w-24 h-28 absolute bottom-0 right-4 animate-float delay-700" />
           {/* Playground scene */}
